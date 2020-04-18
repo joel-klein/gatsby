@@ -6,7 +6,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Img from "gatsby-image"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-const Blog = ({ data }) => {
+const HowTo = ({ data }) => {
   const {
     title,
     text: { json },
@@ -34,7 +34,7 @@ const Blog = ({ data }) => {
           <article className={styles.post}>
             {documentToReactComponents(json, options)}
           </article>
-          <AniLink fade to="/blog" className="btn btn-green m-3">
+          <AniLink fade to="/how-to" className="btn btn-green m-3">
             all posts
           </AniLink>
         </div>
@@ -45,7 +45,7 @@ const Blog = ({ data }) => {
 
 export const query = graphql`
   query($slug: String!) {
-    posts: contentfulBlogPost(slug: { eq: $slug }) {
+    posts: contentfulHowToPost(slug: { eq: $slug }) {
       title
       text {
         json
@@ -54,4 +54,4 @@ export const query = graphql`
   }
 `
 
-export default Blog
+export default HowTo

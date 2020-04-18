@@ -87,3 +87,7 @@ h6 {
 .contact {
   background: var(--mainBeige);
 }
+
+.rich {
+  text-align: center;
+}

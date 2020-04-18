@@ -9,6 +9,15 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             slug
+            id: contentful_id
+          }
+        }
+      }
+      posts: allContentfulHowToPost {
+        edges {
+          node {
+            slug
+            id: contentful_id
           }
         }
       }
@@ -19,6 +28,15 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `blog/${node.slug}`,
       component: path.resolve("./src/templates/blog-template.js"),
+      context: {
+        slug: node.slug,
+      },
+    })
+  })
+  data.posts.edges.forEach(({ node }) => {
+    createPage({
+      path: `how-to/${node.slug}`,
+      component: path.resolve("./src/templates/howto-template.js"),
       context: {
         slug: node.slug,
       },
