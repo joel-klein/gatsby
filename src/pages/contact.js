@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import BackgroundSection from "../components/Globals/BackgroundSection"
 
 const Contact = () => (

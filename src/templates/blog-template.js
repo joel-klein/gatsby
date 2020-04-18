@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import styles from "../components/css/single-blog.module.css"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 const Template = ({ data }) => {
